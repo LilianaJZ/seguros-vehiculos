@@ -1,21 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
-import './index.css'; 
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RouterPrincipal from "./routes/routerPrincipal"; // Importamos el archivo de rutas
+import "../src/index.css"; // Importamos estilos globales
 
-// Importar tus componentes
-import Login from './components/Login';
-import Home from './components/Home';
+const router = RouterPrincipal;
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        {/* Ruta para la página de Login */}
-        <Route path="/" element={<Login />} />
-        {/* Ruta para la página de Home */}
-        <Route path="/home" element={<Home />} />
-      </Routes>
-    </Router>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
