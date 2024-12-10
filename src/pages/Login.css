@@ -1,0 +1,49 @@
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Para manejar la disposición en dispositivos pequeños */
+    height: 100vh;
+    background-image: url('tu-imagen-de-fondo.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    gap: 100px;
+  }
+  
+  /* Div principal */
+  .formulario, .espalda {
+    width: 300px; /* Ancho fijo */
+    height: 700px; /* Alto fijo */
+    margin: 10px; /* Espaciado entre divs */
+    border-radius: 8px; /* Esquinas redondeadas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Efecto de sombra estática */
+  }
+  
+  /* Estilo para el formulario */
+  .formulario {
+    background-color: white;
+  }
+  
+  /* Estilo para el div "espalda" */
+  .espalda {
+    background-color: rgba(0, 0, 139, 0.7); /* Azul oscuro traslúcido */
+    color: white; /* Texto en blanco para contraste */
+    flex-direction: row;
+    align-items: end;
+  }
+  
+  /* Responsividad para dispositivos pequeños */
+  @media (max-width: 768px) {
+    .login-page {
+      flex-direction: column; /* Los divs se apilan verticalmente */
+    }
+  
+    .formulario, .espalda {
+      width: 80%; /* Se ensanchan para ajustarse mejor */
+    }
+  }

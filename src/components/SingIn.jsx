@@ -1,6 +1,9 @@
+import "../pages/Login.css"
+
+
 function SingIn() {
   return (
-    <div className="signin-container">
+    <div className="espalda">
       <button className="btn">Registrarse</button>
     </div>
   );
