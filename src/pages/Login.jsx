@@ -6,6 +6,8 @@ function Login() {
     <div className="login-page">
       <Formulario />
       <SingIn />
+
+      
     </div>
   );
 }
