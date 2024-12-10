@@ -3,7 +3,7 @@ import "../pages/Login.css"
 function Loggin() {
   return (
     <div className="espalda">
-      <button className="btn">Iniciar Sesión</button>
+      <button className="btn btn2">Iniciar Sesión</button>
     </div>
   );
 }

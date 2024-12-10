@@ -1,3 +1,11 @@
+*{
+  /*border: red solid 1px;*/
+}
+
+body{
+  background-image: url('../img/fondo\ 1.png'); /* Reemplaza con la ruta de tu imagen */
+  background-color: transparent;
+}
 
 .login-page {
     display: flex;
@@ -5,23 +13,37 @@
     align-items: center;
     flex-wrap: wrap; /* Para manejar la disposición en dispositivos pequeños */
     height: 100vh;
-    background-image: url('tu-imagen-de-fondo.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-image: url('../img/fondo\ 1.png'); /* Reemplaza con la ruta de tu imagen */
     background-size: cover;
     background-position: center;
-    gap: 100px;
+    gap: 150px;
+    background-color: transparent;
+  }
+
+  .signin-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Para manejar la disposición en dispositivos pequeños */
+    height: 100vh;
+    background-image: url('../img/fondo\ 1.png'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    gap: 150px;
+    background-color: transparent;
   }
   
   /* Div principal */
   .formulario, .espalda {
-    width: 300px; /* Ancho fijo */
+    width: 350px; /* Ancho fijo */
     height: 700px; /* Alto fijo */
     margin: 10px; /* Espaciado entre divs */
-    border-radius: 8px; /* Esquinas redondeadas */
+    border-radius: 12px; /* Esquinas redondeadas */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Efecto de sombra estática */
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.8); /* Efecto de sombra estática */
   }
   
   /* Estilo para el formulario */
@@ -31,11 +53,43 @@
   
   /* Estilo para el div "espalda" */
   .espalda {
-    background-color: rgba(0, 0, 139, 0.7); /* Azul oscuro traslúcido */
+    background-color: rgba(0, 0, 139, 0.649); /* Azul oscuro traslúcido */
     color: white; /* Texto en blanco para contraste */
     flex-direction: row;
     align-items: end;
   }
+
+  .btn2{
+    margin-bottom: 50px;
+    border: red solid 1px;
+  }
+
+   
+  .form {
+    width: 80%;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  
+  .input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
   
   /* Responsividad para dispositivos pequeños */
   @media (max-width: 768px) {

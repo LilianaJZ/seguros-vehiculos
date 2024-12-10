@@ -4,7 +4,7 @@ import "../pages/Login.css"
 function SingIn() {
   return (
     <div className="espalda">
-      <button className="btn">Registrarse</button>
+      <button className="btn btn2">Registrarse</button>
     </div>
   );
 }
