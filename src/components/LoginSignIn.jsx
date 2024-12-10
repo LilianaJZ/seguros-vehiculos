@@ -13,7 +13,7 @@ function LoginSignintransicion() {
       <div className="form-container sign-up">
 
         <form id="loginForm">
-          <h1>Registrarse</h1>
+          <h2>Registrarse</h2>
           <div className="social-icons">
             <ion-icon name="person-add"></ion-icon>
           </div>
@@ -54,7 +54,7 @@ function LoginSignintransicion() {
       </div>
       <div className="form-container sign-in">
         <form>
-          <h1 className="h1">Ingresar al Sistema</h1>
+          <h2 className="h1">Ingresar </h2>
           <div className="social-icons">
             <ion-icon name="person-circle"></ion-icon>
           </div>
@@ -92,8 +92,8 @@ function LoginSignintransicion() {
           <div className="toggle-panel toggle-right">
             <h3>¡HOLA!</h3>
             <p>
-              ¡Bienvenido a nuestra calculadora de seguros! Aquí te ayudaremos
-              a encontrar la cobertura ideal.
+              ¡Bienvenido a nuestra calculadora de seguros! <br /> 
+              Aquí te ayudaremos a encontrar <br />la cobertura ideal.
             </p>
             <button className="hidden" id="register">REGISTRAR</button>
           </div>
