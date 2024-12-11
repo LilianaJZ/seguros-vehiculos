@@ -3,7 +3,7 @@ import "../pages/Login.css"
 
 function SingIn() {
   return (
-    <div className="espalda">
+    <div className="espaldaDos">
       <button className="btn btn2">Registrarse</button>
     </div>
   );

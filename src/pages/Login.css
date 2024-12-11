@@ -47,8 +47,8 @@
   z-index: -1; /* Envía el pseudo-elemento detrás del contenido */
 }
 
-.formulario,
-.espalda {
+.formulario, .formularioDos,
+.espalda, .espaldaDos {
   width: 350px;
   height: 700px;
   margin: 10px;
@@ -60,13 +60,23 @@
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.8);
 }
 
-.formulario {
+.formularioDos {
   background-color: white;
   background-image: url('../img/cardAB2.png');
   background-size: 725px 850px;
   background-repeat: no-repeat;
   background-position: top left;
   background-position-y: -11px;
+  
+}
+
+.formulario {
+  background-color: white;
+  background-image: url('../img/cardBA2b.png');
+  background-size: 725px 850px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-position-y: -24px;
   
 }
 
@@ -82,13 +92,25 @@
   align-items: end;
 }
 
+.espaldaDos {
+  background-image: url('../img/cardBA2b.png');
+  background-size: 725px 850px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: rgba(0, 0, 139, 0.649);
+  background-position-y: -18px;
+  color: white;
+  flex-direction: row;
+  align-items: end;
+}
+
 .btn2 {
   margin-bottom: 50px;
-  border: red solid 1px;
+  
 }
 
 
-.form {
+.form, .formDos {
 
   width: 80%;
   max-width: 400px;
@@ -96,11 +118,16 @@
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+  background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
   backdrop-filter: blur(5px); /* Desenfoque del fondo detrás */
-  -webkit-backdrop-filter: blur(10px); /* Para compatibilidad con navegadores WebKit */
+  -webkit-backdrop-filter: blur(25px); /* Para compatibilidad con navegadores WebKit */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Borde para realzar el efecto de vidrio */
+}
+
+.formDos{
+  position: relative;
+  top: 40px;
 }
 
 .input {
