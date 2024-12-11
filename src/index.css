@@ -1,50 +1,7 @@
 /* Global Styles */
 body {
-    /*margin: 0;
-    font-family: Arial, sans-serif;*/
+    margin: 0;
+    font-family: Arial, sans-serif;
     /*background-color: hsl(216, 77%, 41%);*/
-  }
-  
-  /* Botones */
-  .btn {
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Formularios */
-  .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Páginas */
-  .home-container,
-  .login-page,
-  .signin-page {
-    text-align: center;
-    margin: 20px;
   }
   

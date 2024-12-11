@@ -1,103 +1,150 @@
-*{
+* {
   /*border: red solid 1px;*/
 }
 
-body{
-  background-image: url('../img/fondo\ 1.png'); /* Reemplaza con la ruta de tu imagen */
-  background-color: transparent;
-}
+
 
 .login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Para manejar la disposición en dispositivos pequeños */
-    height: 100vh;
-    background-image: url('../img/fondo\ 1.png'); /* Reemplaza con la ruta de tu imagen */
-    background-size: cover;
-    background-position: center;
-    gap: 150px;
-    background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh; /* 100% del alto de la ventana */
+  width: 100vw; /* 100% del ancho de la ventana */
+  /*background-image: url('../img/fondocarretera.jpg');*/
+  background-color: #21699a;
+  background-size: cover; /* Asegúrate de que cubra toda el área */
+  background-position: center;
+  gap: 0px;
+  
+}
+
+.signin-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh; /* 100% del alto de la ventana */
+  width: 100vw; /* 100% del ancho de la ventana */
+  /*background-image: url('../img/fondocarretera.jpg');*/
+  background-color: #21699a;
+  background-size: cover; /* Asegúrate de que cubra toda el área */
+  background-position: center;
+  gap: 0px;
+}
+
+.signin-page::before {
+  content: ""; /* Necesario para pseudo-elementos */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit; /* Usa la misma imagen que el fondo */
+  background-size: inherit;
+  background-position: inherit;
+  filter: blur(10px); /* Aplica el desenfoque */
+  z-index: -1; /* Envía el pseudo-elemento detrás del contenido */
+}
+
+.formulario,
+.espalda {
+  width: 350px;
+  height: 700px;
+  margin: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.8);
+}
+
+.formulario {
+  background-color: white;
+  background-image: url('../img/cardAB2.png');
+  background-size: 725px 850px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-position-y: -11px;
+  
+}
+
+.espalda {
+  background-image: url('../img/cardAB2.png');
+  background-size: 725px 850px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: rgba(0, 0, 139, 0.649);
+  background-position-y: -18px;
+  color: white;
+  flex-direction: row;
+  align-items: end;
+}
+
+.btn2 {
+  margin-bottom: 50px;
+  border: red solid 1px;
+}
+
+
+.form {
+
+  width: 80%;
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+  backdrop-filter: blur(5px); /* Desenfoque del fondo detrás */
+  -webkit-backdrop-filter: blur(10px); /* Para compatibilidad con navegadores WebKit */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde para realzar el efecto de vidrio */
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* Responsividad para dispositivos pequeños */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+    /* Los divs se apilan verticalmente */
   }
 
-  .signin-page{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Para manejar la disposición en dispositivos pequeños */
-    height: 100vh;
-    background-image: url('../img/fondo\ 1.png'); /* Reemplaza con la ruta de tu imagen */
-    background-size: cover;
-    background-position: center;
-    gap: 150px;
-    background-color: transparent;
-  }
-  
-  /* Div principal */
-  .formulario, .espalda {
-    width: 350px; /* Ancho fijo */
-    height: 700px; /* Alto fijo */
-    margin: 10px; /* Espaciado entre divs */
-    border-radius: 12px; /* Esquinas redondeadas */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.8); /* Efecto de sombra estática */
-  }
-  
-  /* Estilo para el formulario */
-  .formulario {
-    background-color: white;
-  }
-  
-  /* Estilo para el div "espalda" */
+  .formulario,
   .espalda {
-    background-color: rgba(0, 0, 139, 0.649); /* Azul oscuro traslúcido */
-    color: white; /* Texto en blanco para contraste */
-    flex-direction: row;
-    align-items: end;
-  }
-
-  .btn2{
-    margin-bottom: 50px;
-    border: red solid 1px;
-  }
-
-   
-  .form {
     width: 80%;
-    max-width: 400px;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Se ensanchan para ajustarse mejor */
   }
-  
-  .input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s;
-  }
-  
-  .input:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
-  
-  
-  /* Responsividad para dispositivos pequeños */
-  @media (max-width: 768px) {
-    .login-page {
-      flex-direction: column; /* Los divs se apilan verticalmente */
-    }
-  
-    .formulario, .espalda {
-      width: 80%; /* Se ensanchan para ajustarse mejor */
-    }
-  }
+}
