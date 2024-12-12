@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import SingIIn from "../pages/SingIIn";
 import LogAndSignIn from "../pages/LogAndSignIn";
+import SegurosPage from "../pages/SegurosPage";
 
 
 const RouterPrincipal = createBrowserRouter([
@@ -23,6 +24,10 @@ const RouterPrincipal = createBrowserRouter([
     path: "/loginSignin",
     element: <LogAndSignIn />,
   },
+  {
+    path: "/crud",
+    element: <SegurosPage/>
+  }
 
 
 ]);
