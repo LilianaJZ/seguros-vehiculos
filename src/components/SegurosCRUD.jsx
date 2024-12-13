@@ -1,28 +1,17 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 
 const SegurosCRUD = () => {
     // Estado inicial con datos ficticios
     const [usuarios, setUsuarios] = useState([
-      {
-        id: 1,
-        nombre: "Juan Pérez",
-        email: "juan@example.com",
-        direccion: "Calle Falsa 123",
-        fechaNacimiento: "1990-01-01",
-      },
-      {
-        id: 2,
-        nombre: "María Gómez",
-        email: "maria@example.com",
-        direccion: "Av. Siempre Viva 742",
-        fechaNacimiento: "1985-06-15",
-      },
+      
     ]);
   
     const [formData, setFormData] = useState({
       id: null,
       nombre: "",
+      documento: "",
       email: "",
       direccion: "",
       fechaNacimiento: "",
@@ -40,7 +29,7 @@ const SegurosCRUD = () => {
       e.preventDefault();
       const newUser = { ...formData, id: Date.now() };
       setUsuarios([...usuarios, newUser]);
-      setFormData({ id: null, nombre: "", email: "", direccion: "", fechaNacimiento: "" });
+      setFormData({ id: null, nombre: "", documento: "", email: "", direccion: "", fechaNacimiento: "" });
     };
   
     const handleEdit = (usuario) => {
@@ -53,7 +42,7 @@ const SegurosCRUD = () => {
       setUsuarios(
         usuarios.map((usuario) => (usuario.id === formData.id ? formData : usuario))
       );
-      setFormData({ id: null, nombre: "", email: "", direccion: "", fechaNacimiento: "" });
+      setFormData({ id: null, nombre: "", documento: "", email: "", direccion: "", fechaNacimiento: "" });
       setIsEditing(false);
     };
   
@@ -78,6 +67,14 @@ const SegurosCRUD = () => {
             name="nombre"
             placeholder="Nombre"
             value={formData.nombre}
+            onChange={handleChange}
+            required
+          />
+          <input 
+            type="text"
+            name="documento"
+            placeholder="Documento"
+            value={formData.documento}
             onChange={handleChange}
             required
           />
@@ -112,6 +109,7 @@ const SegurosCRUD = () => {
           <thead>
             <tr>
               <th>Nombre</th>
+              <th>Documento</th>
               <th>Email</th>
               <th>Dirección</th>
               <th>Fecha de Nacimiento</th>
@@ -122,6 +120,7 @@ const SegurosCRUD = () => {
             {usuarios.map((usuario) => (
               <tr key={usuario.id}>
                 <td>{usuario.nombre}</td>
+                <td>{usuario.documento}</td>
                 <td>{usuario.email}</td>
                 <td>{usuario.direccion}</td>
                 <td>{usuario.fechaNacimiento}</td>
