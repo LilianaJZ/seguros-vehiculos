@@ -32,6 +32,7 @@ const RouterPrincipal = createBrowserRouter([
   {
     path: "/crudVehiculo",
     element: <VehiculosPage />,
+    
   }
 
 
