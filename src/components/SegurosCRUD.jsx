@@ -3,83 +3,104 @@ import React, { useState } from "react";
 
 const SegurosCRUD = () => {
     // Estado inicial con datos ficticios
-    const [seguros, setSeguros] = useState([
-      { id: 1, nombre: "Juan Pérez", vehiculo: "Toyota Corolla", poliza: "ABC123", vigencia: "2024-12-31" },
-      { id: 2, nombre: "María Gómez", vehiculo: "Honda Civic", poliza: "XYZ789", vigencia: "2025-06-15" },
+    const [usuarios, setUsuarios] = useState([
+      {
+        id: 1,
+        nombre: "Juan Pérez",
+        email: "juan@example.com",
+        direccion: "Calle Falsa 123",
+        fechaNacimiento: "1990-01-01",
+      },
+      {
+        id: 2,
+        nombre: "María Gómez",
+        email: "maria@example.com",
+        direccion: "Av. Siempre Viva 742",
+        fechaNacimiento: "1985-06-15",
+      },
     ]);
   
-    const [formData, setFormData] = useState({ id: null, nombre: "", vehiculo: "", poliza: "", vigencia: "" });
+    const [formData, setFormData] = useState({
+      id: null,
+      nombre: "",
+      email: "",
+      direccion: "",
+      fechaNacimiento: "",
+    });
     const [isEditing, setIsEditing] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [userToDelete, setUserToDelete] = useState(null);
   
-    // Manejar cambios en el formulario
     const handleChange = (e) => {
       const { name, value } = e.target;
       setFormData({ ...formData, [name]: value });
     };
   
-    // Agregar un nuevo seguro
     const handleAdd = (e) => {
       e.preventDefault();
-      const newSeguro = { ...formData, id: Date.now() };
-      setSeguros([...seguros, newSeguro]);
-      setFormData({ id: null, nombre: "", vehiculo: "", poliza: "", vigencia: "" });
+      const newUser = { ...formData, id: Date.now() };
+      setUsuarios([...usuarios, newUser]);
+      setFormData({ id: null, nombre: "", email: "", direccion: "", fechaNacimiento: "" });
     };
   
-    // Editar un seguro existente
-    const handleEdit = (seguro) => {
-      setFormData(seguro);
+    const handleEdit = (usuario) => {
+      setFormData(usuario);
       setIsEditing(true);
     };
   
-    // Guardar cambios en un seguro
     const handleUpdate = (e) => {
       e.preventDefault();
-      setSeguros(
-        seguros.map((seguro) => (seguro.id === formData.id ? formData : seguro))
+      setUsuarios(
+        usuarios.map((usuario) => (usuario.id === formData.id ? formData : usuario))
       );
-      setFormData({ id: null, nombre: "", vehiculo: "", poliza: "", vigencia: "" });
+      setFormData({ id: null, nombre: "", email: "", direccion: "", fechaNacimiento: "" });
       setIsEditing(false);
     };
   
-    // Eliminar un seguro
-    const handleDelete = (id) => {
-      setSeguros(seguros.filter((seguro) => seguro.id !== id));
+    const handleConfirmDelete = (id) => {
+      setUsuarios(usuarios.filter((usuario) => usuario.id !== id));
+      setShowModal(false);
+    };
+  
+    const handleDelete = (usuario) => {
+      setUserToDelete(usuario);
+      setShowModal(true);
     };
   
     return (
-      <div className="seguros-crud">
-        <h1>Gestión de Seguros de Vehículos</h1>
+      <div className="usuarios-crud">
+        <h1>Gestión de Usuarios</h1>
   
         {/* Formulario */}
         <form onSubmit={isEditing ? handleUpdate : handleAdd}>
           <input
             type="text"
             name="nombre"
-            placeholder="Nombre del cliente"
+            placeholder="Nombre"
             value={formData.nombre}
             onChange={handleChange}
             required
           />
           <input
-            type="text"
-            name="vehiculo"
-            placeholder="Vehículo"
-            value={formData.vehiculo}
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
             onChange={handleChange}
             required
           />
           <input
             type="text"
-            name="poliza"
-            placeholder="Póliza"
-            value={formData.poliza}
+            name="direccion"
+            placeholder="Dirección"
+            value={formData.direccion}
             onChange={handleChange}
             required
           />
           <input
             type="date"
-            name="vigencia"
-            value={formData.vigencia}
+            name="fechaNacimiento"
+            value={formData.fechaNacimiento}
             onChange={handleChange}
             required
           />
@@ -91,29 +112,44 @@ const SegurosCRUD = () => {
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Vehículo</th>
-              <th>Póliza</th>
-              <th>Vigencia</th>
+              <th>Email</th>
+              <th>Dirección</th>
+              <th>Fecha de Nacimiento</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            {seguros.map((seguro) => (
-              <tr key={seguro.id}>
-                <td>{seguro.nombre}</td>
-                <td>{seguro.vehiculo}</td>
-                <td>{seguro.poliza}</td>
-                <td>{seguro.vigencia}</td>
+            {usuarios.map((usuario) => (
+              <tr key={usuario.id}>
+                <td>{usuario.nombre}</td>
+                <td>{usuario.email}</td>
+                <td>{usuario.direccion}</td>
+                <td>{usuario.fechaNacimiento}</td>
                 <td>
-                  <button onClick={() => handleEdit(seguro)}>Editar</button>
-                  <button onClick={() => handleDelete(seguro.id)}>Eliminar</button>
+                  <button onClick={() => handleEdit(usuario)}>Editar</button>
+                  <button onClick={() => handleDelete(usuario)}>Eliminar</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+  
+        {/* Modal de Confirmación */}
+        {showModal && (
+          <div className="modal-backdrop">
+            <div className="modal">
+              <h2>¿Estás seguro?</h2>
+              <p>¿Quieres eliminar a {userToDelete?.nombre}?</p>
+              <div className="modal-buttons">
+                <button onClick={() => handleConfirmDelete(userToDelete.id)}>Sí</button>
+                <button onClick={() => setShowModal(false)}>No</button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   };
+  
 
 export default SegurosCRUD;

@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import SingIIn from "../pages/SingIIn";
 import LogAndSignIn from "../pages/LogAndSignIn";
 import SegurosPage from "../pages/SegurosPage";
+import VehiculosPage from "../pages/VehiculosPage";
 
 
 const RouterPrincipal = createBrowserRouter([
@@ -25,8 +26,12 @@ const RouterPrincipal = createBrowserRouter([
     element: <LogAndSignIn />,
   },
   {
-    path: "/crud",
-    element: <SegurosPage/>
+    path: "/crudUsuario",
+    element: <SegurosPage/>,
+  },
+  {
+    path: "/crudVehiculo",
+    element: <VehiculosPage />,
   }
 
 
