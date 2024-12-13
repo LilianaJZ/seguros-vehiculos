@@ -1,13 +1,18 @@
+
 import Formulario from "../components/Formulario";
+import Loggin from "../components/Loggin";
 import SingIn from "../components/SingIn";
 import "./Login.css"
 
 
 function Login() {
+
+  
   return (
     <div className="login-page">
       <Formulario className ="formulario" />
-      <SingIn className = "espalda" />
+      
+      <Loggin className = "espalda"/>
 
       
     </div>

@@ -81,7 +81,8 @@
 }
 
 .espalda {
-  background-image: url('../img/cardAB2.png');
+  
+  background-image: url('../img/cardBA2b.png');
   background-size: 725px 850px;
   background-repeat: no-repeat;
   background-position: top right;
@@ -93,7 +94,7 @@
 }
 
 .espaldaDos {
-  background-image: url('../img/cardBA2b.png');
+  background-image: url('../img/cardAB2.png');
   background-size: 725px 850px;
   background-repeat: no-repeat;
   background-position: top right;

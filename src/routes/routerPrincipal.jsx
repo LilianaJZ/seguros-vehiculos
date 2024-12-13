@@ -17,7 +17,7 @@ const RouterPrincipal = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/singiin",
+    path: "/signin",
     element: <SingIIn />,
   },
   {
