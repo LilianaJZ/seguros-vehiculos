@@ -75,8 +75,7 @@ const Home = () => {
       <section className="info-section">
         <div className="info-content">
           <div className="info-images">
-            <img src="/src/img/Home2.jpeg" alt="Auto asegurado 1" />
-            <img src="/src/img/Home3.jpg" alt="Auto asegurado 2" />
+            <img src="/src/img/Home4.webp" alt="Auto asegurado 1" />
           </div>
           <p>
             ¡Asegura tu vehículo hoy! En Colmenar, no solo aseguramos vehículos, ¡los protegemos como si fueran nuestros! Con años de experiencia, sabemos lo que necesitas para sentirte seguro en la carretera. ¡Únete a la familia Colmenar y maneja con confianza!
@@ -86,11 +85,13 @@ const Home = () => {
 
       {/* Mapa */}
       <section className="map-section">
+      <div className="contact-info">
         <h2>Contáctanos</h2>
         <h3>Teléfono: 800-123-4567</h3>
         <h3>Email: atencion@colmenar.com</h3>
         <h3>Dirección: Calle de los Seguros, 123</h3>
         <h3>Horario de Atención: Lunes a Viernes, 9am - 6pm</h3>
+        </div>
         <iframe
           title="Ubicación en Medellín"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198819.34667813266!2d-75.637393!3d6.244204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4691f768fed3ed%3A0x26a68c3852a6da3e!2sMedell%C3%ADn%2C%20Antioquia%2C%20Colombia!5e0!3m2!1ses-419!2sco!4v1701234567890"

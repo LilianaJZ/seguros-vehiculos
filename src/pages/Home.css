@@ -20,7 +20,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: blue;
+    background-color: #3a3ae9;
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
@@ -61,7 +61,7 @@ body {
     position: relative;
     width: 100%;
     height: 800px;
-    background: url('/src/img/Home1.jpg') center/cover no-repeat;
+    background: url('/src/img/Home8.webp') center/cover no-repeat;
   }
   
   .hero-overlay {
@@ -119,6 +119,7 @@ body {
   /* Sección de Planes de Cobertura */
   .coverage-plans {
     padding: 20px;
+    text-align: center;
   }
   
   .plans-container {
@@ -135,12 +136,12 @@ body {
     border: 1px solid #ccc;
     border-radius: 10px;
     text-align: center;
-    background-color:#88dded;
+    background-color:#4ab4c9;
   }
   
   .plan-button {
     padding: 10px 15px;
-    background: #0066cc;
+    background: #0c59a7;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -160,22 +161,23 @@ body {
   
   .info-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
-    gap: 15px;
+    justify-content: space-between;
+    gap: 20px;
   }
   
   .info-images {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
+    align-items: center;
+    width: 100%;
+     box-sizing: border-box;
   }
   
   .info-images img {
-    width: 400px;
-    height: 300px;
+    width: 80%;
+    height: auto;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -189,12 +191,23 @@ body {
   }
   /* Mapa */
   .map-section {
+    display: flex;
+    justify-content:space-between;
     padding: 20px;
+    align-items: center;
   }
   
-  .map-section iframe {
-    border-radius: 10px;
-  }
+  .map-section .contact-info {
+   max-width: 45%; /* Ajusta este valor según sea necesario */ 
+   display: flex;
+    flex-direction: column;
+     gap: 10px; } 
+    
+   .map-section iframe {
+     border-radius: 10px;
+      width: 50%; /* Ajusta este valor según sea necesario */ 
+      height: 450px; 
+      object-fit: cover; } 
   
   /* Pie de Página */
   .footer {
