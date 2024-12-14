@@ -1,0 +1,251 @@
+/* LoginSignin.css */
+
+/* General Styles */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ /* border: red 1px solid;*/
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background: url("/View/IMG/Login/familia-feliz.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+.h1 {
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  margin-bottom: 20px;
+}
+
+.container button {
+  background-color: #0b0a4e;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Botón hidden con transición de color */
+.container button.hidden {
+  background-color: transparent;
+  border-color: #fff;
+  opacity: 0; /* Para hacer invisible el botón en el estado "hidden" */
+  pointer-events: none; /* Evita interacción cuando está oculto */
+  transition: opacity 0.3s ease-in-out, pointer-events 0s 0.3s; /* Asegura que no se pueda hacer clic mientras está invisible */
+}
+
+/* Botón con hover */
+.container button:hover {
+  background-color: #0056b3;
+}
+
+/* Contenedor de formularios */
+.form-container {
+  position: absolute;
+  top: -200px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.sign-in {
+  left: 0px;
+  width: 50%;
+  background-color: white;
+  z-index: 2;
+}
+
+.container.active .sign-in {
+  transform: translateX(0);
+  opacity: 0;
+}
+
+.sign-up {
+  left: 0px;
+  width: 50%;
+  opacity: 1;
+  z-index: 1;
+}
+
+.container.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+/* Estilo de la caja lateral (toggle-container) */
+.toggle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  
+  transition: all 0.6s ease-in-out;
+  border-radius: 150px 0 0 100px;
+  z-index: 1000;
+}
+
+.container.active .toggle-container {
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+  background-color: #081779;
+  height: 100%;
+  background: linear-gradient(to right, #030d49, #5058ee);
+  color: #fff;
+  position: relative;
+  top: -150px;
+  width: 200%;
+ 
+}
+
+/* Paneles (left y right) */
+.toggle-panel {
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  width: 50%;
+  height: 100%;
+  margin-left: 15px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px;
+  text-align: center;
+  transform: translateX(100%);
+  transition: transform 0.6s ease-in-out;
+}
+
+.toggle-panel.active {
+  transform: translateX(0);
+}
+
+.toggle-left {
+
+  left: 0px;
+  top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+  transform: translateX(200%);
+}
+
+.container.active .toggle-left {
+  transform: translateX(0);
+}
+
+.toggle-right {
+  position: inherit;
+  left: -180px;
+  right: 0px;
+  top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  transform: translateX(0);
+}
+
+.container.active .toggle-right {
+  transform: translateX(200%);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .form-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    z-index: 1;
+  }
+
+  .sign-in, .sign-up {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .toggle-container {
+    display: none;
+  }
+
+  .container-input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .h1 {
+    font-size: 1.5rem;
+  }
+
+  .container-input {
+    width: 100%;
+  }
+
+  .toggle-container {
+    display: none;
+  }
+}

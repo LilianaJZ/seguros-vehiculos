@@ -1,0 +1,192 @@
+* {
+  /*border: red solid 1px;*/
+}
+
+
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* 100% del alto de la ventana */
+  width: 100vw; /* 100% del ancho de la ventana */
+  /*background-image: url('../img/fondocarretera.jpg');*/
+  background-color: #21699a;
+  background-size: cover; /* Asegúrate de que cubra toda el área */
+  background-position: center;
+  gap: 0px;
+  
+}
+
+.signin-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 100% del alto de la ventana */
+  width: 100vw; /* 100% del ancho de la ventana */
+  /*background-image: url('../img/fondocarretera.jpg');*/
+  background-color: var(--color-4);
+  background-size: cover; /* Asegúrate de que cubra toda el área */
+  background-position: center;
+  gap: 0px;
+}
+
+.signin-page::before {
+  content: ""; /* Necesario para pseudo-elementos */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit; /* Usa la misma imagen que el fondo */
+  background-size: inherit;
+  background-position: inherit;
+  filter: blur(10px); /* Aplica el desenfoque */
+  z-index: -1; /* Envía el pseudo-elemento detrás del contenido */
+}
+
+.formulario, .formularioDos,
+.espalda, .espaldaDos {
+  width: 1080px;
+  height: 700px;
+  margin-left: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.8);
+}
+
+.formularioDos {
+  background-color: white;
+  background-image: url('../img/newlogin.jpg');
+  background-size: 725px 850px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  
+}
+
+.formulario {
+  background-color: white;
+  background-image: url('../img/newlogin.jpg');
+  background-size: 725px 850px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  
+}
+
+.espalda {
+  
+  background-image: url('../img/cardBA2b.png');
+  background-size: 725px 850px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: rgba(0, 0, 139, 0.649);
+  color: white;
+  flex-direction: row;
+  align-items: end;
+}
+
+.espaldaDos {
+  background-image: url('../img/cardAB2.png');
+  background-size: 725px 850px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: rgba(0, 0, 139, 0.649);
+  color: white;
+  flex-direction: row;
+  align-items: end;
+}
+
+.btn2 {
+  margin-bottom: 50px;
+  position: relative;
+  
+
+}
+
+
+.form, .formDos {
+
+  width: 80%;
+  max-width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 100px;
+  background-color: #ffffff;
+  padding: 30px;
+  margin-right: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
+  backdrop-filter: blur(5px); /* Desenfoque del fondo detrás */
+  -webkit-backdrop-filter: blur(25px); /* Para compatibilidad con navegadores WebKit */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde para realzar el efecto de vidrio */
+}
+
+
+
+.button-container{
+  position: absolute;
+  top: 55px;
+  left: 45px;
+
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* Responsividad para dispositivos pequeños */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+    /* Los divs se apilan verticalmente */
+  }
+
+  .formulario,
+  .espalda {
+    width: 80%;
+    /* Se ensanchan para ajustarse mejor */
+  }
+}

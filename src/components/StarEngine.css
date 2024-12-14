@@ -1,0 +1,142 @@
+/**{
+  border: red 1px solid;
+}*/
+
+.botonEngine {
+  all: none;
+  /* Elimina todos los estilos predeterminados */
+  background: none;
+  /* Quitar fondo */
+  border: none;
+  /* Quitar borde */
+  padding: 0;
+  /* Quitar relleno */
+  cursor: pointer;
+  /* Mantener el cursor en forma de manito */
+  font: inherit;
+  /* Heredar la fuente */
+  text-align: center;
+  /* Alinear texto en el centro */
+  /*display: inline-block;*/
+  border-radius: 50%;
+  display: flex;
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+
+}
+
+/* Contenedor del botón */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  position: relative;
+  /* Asegura alineación */
+}
+
+/* Botón principal */
+.start-stop-button {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1b1b1b, #000);
+  /* Botón oscuro */
+  cursor: pointer;
+  /* Puntero tipo "manito" */
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  box-shadow:
+    inset 2px 2px 6px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.8),
+    0 8px 20px rgba(0, 0, 0, 0.5);
+  /* Sombras */
+}
+
+/* Efecto de hundimiento */
+.start-stop-button:active {
+  transform: translateY(1px);
+  /* Efecto de hundimiento */
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.8),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Aro cromado */
+.start-stop-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Centrar perfectamente */
+  width: 180px;
+  /* Un poco más grande que el botón */
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #fefefe, #bdbdbd, #8e8e8e, #5a5a5a);
+  /* Efecto cromado */
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.5);
+  /* Sombra externa */
+  z-index: -1;
+  /* Aro detrás del botón */
+}
+
+/* Círculo interno */
+.inner-circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1e1e1e, #000);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow:
+    inset 0 2px 6px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Efecto de brillo neón */
+.inner-circle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 191, 255, 0.4), transparent 70%);
+  box-shadow: 0 0 20px 10px rgba(0, 191, 255, 0.5);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Mostrar el brillo al presionar */
+.start-stop-button:active .inner-circle::after {
+  opacity: 1;
+  /* Hace visible el brillo */
+}
+
+/* Texto */
+.text span {
+  display: block;
+  margin: 2px 0;
+  color: #00bfff;
+  /* Azul eléctrico */
+  text-shadow: 0 0 5px #00bfff;
+}
