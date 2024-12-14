@@ -1,0 +1,77 @@
+/* Contenedor del botón */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Centrado vertical en la pantalla */
+  background-color: #1e1e1e; /* Fondo oscuro similar al tablero */
+}
+
+/* Botón principal */
+.start-stop-button {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1b1b1b, #000);
+  border: 8px solid #ddd; /* Base del aro cromado */
+  box-shadow: 
+    inset 2px 2px 6px rgba(255, 255, 255, 0.6), /* Reflejos internos */
+    inset -2px -2px 6px rgba(0, 0, 0, 0.8), /* Sombras internas */
+    0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra externa */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; /* Puntero tipo "manito" */
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+/* Efecto de "hundimiento" al hacer click */
+.start-stop-button:active {
+  transform: translateY(4px); /* Movimiento hacia abajo */
+  box-shadow: 
+    inset 4px 4px 8px rgba(0, 0, 0, 0.8), 
+    inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Aro cromado */
+.start-stop-button::before {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid;
+  border-image: linear-gradient(to bottom, #fefefe, #a7a7a7, #5a5a5a) 1;
+  box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.5),
+    inset 0 0 8px rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+/* Círculo interno */
+.inner-circle {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1e1e1e, #000);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 
+    inset 0 2px 6px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Texto */
+.text span {
+  display: block;
+  margin: 2px 0;
+  color: #00bfff; /* Azul eléctrico */
+  text-shadow: 0 0 5px #00bfff;
+}

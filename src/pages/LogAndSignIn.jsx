@@ -1,9 +1,11 @@
 import LoginSignintransicion from "../components/LoginSignIn";
+import StartStopButton from "../components/StarEngine";
 
 
 function LogAndSignIn() {
     return (
-        <LoginSignintransicion />
+        <LoginSignintransicion />,
+        <StartStopButton />
     );
 }
 
