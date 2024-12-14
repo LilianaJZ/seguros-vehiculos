@@ -10,7 +10,7 @@ function Loggin() {
   }
 
   return (
-    <div className="espalda">
+    <div >
 
       <button className="btn btn2" onClick={handleClick} >Registrarse</button>
 

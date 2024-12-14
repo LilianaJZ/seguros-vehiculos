@@ -10,7 +10,7 @@ const handleClick =()=>{
 
 
   return (
-    <div className="espaldaDos">
+    <div>
       <button className="btn btn2" onClick={handleClick} >Iniciar Sesión</button>
     </div>
   );

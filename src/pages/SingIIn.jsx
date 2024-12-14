@@ -1,7 +1,7 @@
 
 import FormularioDos from "../components/FormularioDos";
-import Loggin from "../components/Loggin";
 import SingIn from "../components/SingIn";
+import "./SingIIn.css"
 
 function SingIIn() {
   return (

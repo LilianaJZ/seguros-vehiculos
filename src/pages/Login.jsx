@@ -1,7 +1,6 @@
 
 import Formulario from "../components/Formulario";
 import Loggin from "../components/Loggin";
-import SingIn from "../components/SingIn";
 import "./Login.css"
 
 
